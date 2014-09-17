@@ -33,3 +33,23 @@ describe('partial', function() {
   });
 
 });
+
+describe('partialRight', function() {
+  it('works for 2 arguments', function() {
+    var greet = function(greeting, name) {
+      return util.format(greeting + " " + name);
+    };
+    var andrea = lib.partialRight(greet, "Andrea");
+    var result = andrea("Heeeeeeey, waas happenin'");
+    expect(result).to.eql("Heeeeeeey, waas happenin' Andrea");
+  });
+
+  it('works for 3 arguments', function() {
+    var greet = function(greeting1, greeting2, name) {
+      return util.format(greeting1 + " " + name + " " + greeting2);
+    };
+    var andrea = lib.partialRight(greet, "Andrea");
+    var result = andrea("Sup", "You rock!");
+    expect(result).to.eql("Sup Andrea You rock!");
+  });
+});
