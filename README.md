@@ -1,0 +1,1 @@
+Working on squashing my commits. This is another change that I will commit. This is the commit that I'll 'pick'.
